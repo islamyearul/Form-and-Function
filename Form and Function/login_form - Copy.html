@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+	<style>
+		#registrationform{
+			margin-top: 50px;
+			margin-left: 500px;
+
+		}
+		input{
+			border: 1px solid #2975FF;
+		}
+
+	</style>
+</head>
+<body>
+		<lebel>Name:</lebel>
+			<input type="text" name="name" id="name"><br><br>
+		<lebel>Password:</lebel>
+			<input type="password" name="password" id="password" minlength="6"><br><br>
+		<lebel>City Of Employment:</lebel>
+			<input type="text" name="city" id="city"> <br><br>
+		<lebel>Novell Service Login:</lebel>
+			<select name="server" id="server">
+						<option value="">--Choose a server--</option>
+						<option value="">MySQL</option>
+						<option value="">FB</option>
+						<option value="">Tornado</option>
+						<option value="">Demo</option>
+			</select><br><br>
+
+		<lebel>Please specify your role:</lebel> &nbsp; &nbsp;
+					<input type="radio" name="role" id="post">Admin &nbsp;
+					<input type="radio" name="role" id="post">Engineer &nbsp;
+					<input type="radio" name="role" id="post">Manager &nbsp; 
+					<input type="radio" name="role" id="post">Guest &nbsp;  <br><br>
+
+		<lebel>Single Sign-on to the following:</lebel>&nbsp; &nbsp;
+					<input type="checkbox" id="sign">Mail &nbsp;
+					<input type="checkbox" id="sign">Payroll &nbsp;
+					<input type="checkbox" id="sign">Self-service &nbsp; <br><br>
+
+					<button id="entry" name="button" value="add" onclick="Addclick()">Login</button> &nbsp; &nbsp;
+					<input type="reset" name="reset" value="Reset">	
+
+
+
+
+<script>
+	var list1 = [];
+	var list2 = [];
+	var list3 = [];
+	var list4 = [];
+	var list5 = [];
+	var list6 = [];
+
+        n = 1;
+        x = 0;
+
+        function Addclick(){
+
+        	var addRown = document.getElementById('display');
+        	var newRow = addRown.insertRow(n);
+
+        	list1[x] = document.getElementById('name').value; 
+        	list2[x] = document.getElementById('password').value; 
+        	list3[x] = document.getElementById('city').value; 
+        	list4[x] = document.getElementById('server').value; 
+        	list5[x] = document.getElementById('post').value; 
+        	list6[x] = document.getElementById('sign').value; 
+
+        	var cell = newRow.insertCell(0);
+        	var cell = newRow.insertCell(1);
+        	var cell = newRow.insertCell(2);
+        	var cell = newRow.insertCell(3);
+        	var cell = newRow.insertCell(4);
+        	var cell = newRow.insertCell(5);
+
+        	cell1.innerHTML = list1[x];
+        	cell2.innerHTML = list2[x];
+        	cell3.innerHTML = list3[x];
+        	cell4.innerHTML = list4[x];
+        	cell5.innerHTML = list5[x];
+        	cell6.innerHTML = list6[x];
+
+        	n++;
+        	x++;
+
+
+
+        }
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+		<script>
+			
+		/*	var row = 1;
+
+			var entry = document.getElementById("entry");
+			entry.addEventListener("click", displyDetails);
+
+						function displayDetails(){
+				var name = document.getElementById("name").value;
+				var password = document.getElementById("password").value;
+				var city = document.getElementById("city").value;
+				var server = document.getElementById("server").value;
+				var post = document.getElementById("post").value;
+				var sign = document.getElementById("sign").value;
+
+				if (!name || !password || !city) {
+					alert("Please Fillup All Input Data");
+					return;
+				}
+
+				var display = document.getElementById("display");
+				var newRow = display.insertRow(row);
+
+				var cell1 = newRow.insertCell(0);
+				var cell2 = newRow.insertCell(1);
+				var cell3 = newRow.insertCell(2);
+				var cell4 = newRow.insertCell(3);
+				var cell5 = newRow.insertCell(4);
+				var cell6 = newRow.insertCell(5);
+
+				cell1.innerHTML = name;
+				cell2.innerHTML = password;
+				cell3.innerHTML = city;
+				cell4.innerHTML = server;
+				cell5.innerHTML = post;
+				cell6.innerHTML = sign;
+
+				row++;
+
+
+
+
+
+			}
+		</script>
+
+
+
+
+	</div>
+	<div>
+		<center><h4>Here Is Form Content</h4></center><br>
+		<table id="display" align="center" border="1px" cellpadding="5px" cellcollapse="collapse">
+			<tr>
+				<th>Name</th>
+				<th>Password</th>
+				<th>City</th>
+				<th>Server</th>
+				<th>Designation</th>
+				<th>Single Sign</th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

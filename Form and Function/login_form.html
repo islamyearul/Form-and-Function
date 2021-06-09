@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+	<style>
+		.registrationform{
+			margin-top: 50px;
+		}
+		input{
+			border: 1px solid #2975FF;
+		}
+
+	</style>
+</head>
+<body>
+	<form action="" class="registrationform" id="registrationform" name="form">
+		<h2 align="center">Novell Service Login</h2>
+		<table class="tablee" align="center" cellpadding="5px">
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" id="name" required=""></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password" id="password" minlength="6" required=""></td>
+			</tr>
+			<tr>
+				<td>City Of Employment:</td>
+				<td><input type="text" id="city"></td>
+			</tr>
+			<tr>
+				<td>Web server:</td>
+				<td>
+					<select name="server" id="server">
+						<option value="">--Choose a server--</option>
+						<option value="">MySQL</option>
+						<option value="">FB</option>
+						<option value="">Tornado</option>
+						<option value="">Demo</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Please specify your role:</td>
+				<td id="post">
+					<input type="radio" name="role">Admin <br>
+					<input type="radio" name="role">Engineer <br>
+					<input type="radio" name="role">Manager <br>
+					<input type="radio" name="role">Guest <br>
+				</td>
+			</tr>
+			<tr>
+				<td>Single Sign-on to the following:</td>
+				<td id="sign">
+				<td id="sign">
+					<input type="checkbox" name="sign">Mail <br>
+					<input type="checkbox" name="sign">Payroll <br>
+					<input type="checkbox" name="sign">Self-service <br>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<input id="entry" type="button" onclick="displayDetails()" name="login" value="Login">
+				</td>
+				<td>
+					<input type="reset" name="reset" value="Reset">
+				</td>
+			</tr>
+
+		</table>
+		
+
+	</form> <br><hr>
+	<div>
+		<script>
+			
+			var row = 1;
+
+			var entry = document.getElementById("entry");
+			entry.addEventListener("click", displyDetails);
+
+						function displayDetails(){
+				var name = document.getElementById("name").value;
+				var password = document.getElementById("password").value;
+				var city = document.getElementById("city").value;
+				var server = document.getElementById("server").value;
+				var post = document.getElementById("post").value;
+				var sign = document.getElementById("sign").value;
+
+				if (!name || !password || !city) {
+					alert("Please Fillup All Input Data");
+					return;
+				}
+
+				var display = document.getElementById('display');
+				var newRow = display.insertRow(row);
+
+				var cell1 = newRow.insertCell(0);
+				var cell2 = newRow.insertCell(1);
+				var cell3 = newRow.insertCell(2);
+				var cell4 = newRow.insertCell(3);
+				var cell5 = newRow.insertCell(4);
+				var cell6 = newRow.insertCell(5);
+
+				cell1.innerHTML = name;
+				cell2.innerHTML = age;
+				cell3.innerHTML = city;
+				cell4.innerHTML = server;
+				cell5.innerHTML = post;
+				cell6.innerHTML = sign;
+
+				row++;
+			}
+		</script>
+
+
+
+
+	</div>
+	<div>
+		<center><h4>Here Is Form Content</h4></center><br>
+		<table id="display" align="center" border="1px" cellpadding="5px" cellcollapse="collapse">
+			<tr>
+				<th>Name</th>
+				<th>Password</th>
+				<th>City</th>
+				<th>Server</th>
+				<th>Designation</th>
+				<th>Single Sign</th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
